@@ -216,6 +216,7 @@
     <ClInclude Include="System\Sound\ISoundSystem.h" />
     <ClInclude Include="System\Game\GameSystem.h" />
     <ClInclude Include="System\Window\WindowSystem.h" />
+    <ClInclude Include="Component\Renderer\TextRenderer.h" />
     <ClInclude Include="World\Layer\Layer.h" />
     <ClInclude Include="World\WorldManager.h" />
     <ClInclude Include="World\Object\Actor\Actor.h" />
@@ -278,6 +279,7 @@
     <ClCompile Include="System\Sound\ISoundSystem.cpp" />
     <ClCompile Include="System\Game\GameSystem.cpp" />
     <ClCompile Include="System\Window\WindowSystem.cpp" />
+    <ClCompile Include="Component\Renderer\TextRenderer.cpp" />
     <ClCompile Include="World\Layer\Layer.cpp" />
     <ClCompile Include="World\WorldManager.cpp" />
     <ClCompile Include="World\Object\Actor\Actor.cpp" />

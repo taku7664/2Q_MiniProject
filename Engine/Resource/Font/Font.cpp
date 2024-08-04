@@ -8,7 +8,6 @@ namespace Engine
         : Resource(_key, _path, _type)
     {
         m_path = _path;
-
         m_fontName = _key;
 
         HRESULT check;
