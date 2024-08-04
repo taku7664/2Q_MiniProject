@@ -61,13 +61,16 @@ namespace Engine
 
 		std::string		 GetName()const { return m_WorldName; }
 		WorldTag		 GetTag()const { return m_WorldTag; }
-		Layer** GetLayerList() { return m_layers; }
+		Layer**			 GetLayerList() { return m_layers; }
 		GameState	     GetState() { return m_type; }
+		Actor*			 GetMainCamera() { return m_mainCamera; }
 		void			 SetName(std::string _name) { m_WorldName = _name; }
 		void			 SetTag(WorldTag _tag) { m_WorldTag = _tag; }
 		void			 SetDestroy() { m_type = GameState::Destroy; }
 
 	private:
+
+		Actor* m_mainCamera;
 
 		GameState		 m_type = GameState::Active;
 

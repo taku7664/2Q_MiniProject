@@ -118,12 +118,10 @@ namespace Engine
 
 		case WM_KEYDOWN:
 			Input::GetKeyDown(_wParam);
-			Debug::Log(std::to_string(_wParam) + " : Key_Down");
 			break;
 
 		case WM_KEYUP:
 			Input::GetKeyUp(_wParam);
-			Debug::Log(std::to_string(_wParam) + " : Key_Up");
 			break;
 		case WM_SYSKEYDOWN:
 		case WM_SYSKEYUP:
@@ -132,11 +130,9 @@ namespace Engine
 			break;
 
 		case WM_LBUTTONDOWN:
-			Debug::Log("Left Mouse Button Down");
 			break;
 
 		case WM_LBUTTONUP:
-			Debug::Log("Left Mouse Button Up");
 			break;
 
 		case WM_DESTROY:

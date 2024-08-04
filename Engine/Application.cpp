@@ -73,6 +73,7 @@ namespace Engine
 	{
 		if (CollisionManager::ProcessCycle == 1)
 			CollisionManager::CollsionProcess();
+		
 		if (m_game) m_game->EarlyUpdate();
 		WorldManager::EarlyUpdate();
 		ButtonManager::EarlyUpdate();

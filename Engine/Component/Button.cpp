@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Button.h"
+#include "Helper/Input/Input.h"
 #include "../World/Object/Actor/Actor.h"
 #include "Collision/ButtonManager.h"
 
@@ -18,17 +19,21 @@ namespace Engine
 
 	void Button::EarlyUpdate()
 	{
-		//Vector2 mousePos = Mouse::mousePos;
-		//Vector2 ownerPos = gameObject->transform->WorldPosition();
+		Vector2 mousePos = Input::MousePosition();
+		Vector2 ownerPos = 
+			WorldManager::GetActiveWorld()->
+			GetMainCamera()->
+			GetComponent<Camera2D>()->
+			ScreenPosition(gameObject->transform);
 
-		//// 버튼은 맨 위에 있는 버튼만 동작해야함. Enter, Stay, Exit도 포함.
-		//if (ownerPos.x - m_buttonSize.x / 2 < mousePos.x &&
-		//	ownerPos.y - m_buttonSize.y / 2 < mousePos.y &&
-		//	ownerPos.x + m_buttonSize.x / 2 > mousePos.x &&
-		//	ownerPos.y + m_buttonSize.y / 2 > mousePos.y)
-		//{
-		//	ButtonManager::SetTarget(gameObject);
-		//}
+		// 버튼은 맨 위에 있는 버튼만 동작해야함. Enter, Stay, Exit도 포함.
+		if (ownerPos.x - m_buttonSize.x / 2 < mousePos.x &&
+			ownerPos.y - m_buttonSize.y / 2 < mousePos.y &&
+			ownerPos.x + m_buttonSize.x / 2 > mousePos.x &&
+			ownerPos.y + m_buttonSize.y / 2 > mousePos.y)
+		{
+			ButtonManager::SetTarget(gameObject);
+		}
 	}
 
 	void Button::Update()
@@ -41,5 +46,17 @@ namespace Engine
 			}
 			isEnter = false;
 		}
+	}
+	bool Button::OnPress()
+	{
+		return isEnter && Input::MouseIsDown(Mouse::LEFT);
+	}
+	bool Button::OnHold()
+	{
+		return isEnter && Input::MouseIsHold(Mouse::LEFT);
+	}
+	bool Button::OnRelease()
+	{
+		return isEnter && Input::MouseIsUp(Mouse::LEFT);
 	}
 }

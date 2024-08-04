@@ -20,7 +20,7 @@ namespace Engine
 
 	bool SpriteRenderer2D::Draw(Camera2D* _camera)
 	{
-		if (!m_sprite) assert(false);
+		if (!m_sprite) return false;
 
 		ID2D1BitmapRenderTarget* renderTarget = _camera->GetBitmapRenderTarget();
 
@@ -30,7 +30,7 @@ namespace Engine
 			{ renderOffset.x,  renderOffset.y,
 			renderOffset.x + size.x,
 			renderOffset.y + size.y },
-			color.alpha);
+			alpha);
 
 		renderTarget->SetTransform(D2D1::Matrix3x2F::Identity());
 

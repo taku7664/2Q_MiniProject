@@ -22,7 +22,7 @@ namespace Engine
 
 		int index = 0;
 
-		Color4 color;
+		float alpha;
 
 	private:
 

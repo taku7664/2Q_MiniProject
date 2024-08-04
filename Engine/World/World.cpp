@@ -13,8 +13,8 @@ namespace Engine
         }
 
         // 메인카메라 생성
-        Actor* camera = CreateObject<Actor>("MainCamera", LayerTag::Defalut, ObjectTag::Camera);
-        camera->AddComponent<Camera2D>();
+        m_mainCamera = CreateObject<Actor>("MainCamera", LayerTag::Defalut, ObjectTag::Camera);
+        m_mainCamera->AddComponent<Camera2D>();
     }
 
     World::~World()

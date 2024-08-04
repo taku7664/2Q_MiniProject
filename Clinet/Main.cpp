@@ -1,4 +1,4 @@
-#include "Application/Application.h"
+#include "Application.h"
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     _In_opt_ HINSTANCE hPrevInstance,

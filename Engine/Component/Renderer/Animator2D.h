@@ -38,6 +38,8 @@ namespace Engine
 		float frameCount;
 		float countScale = 1.f;
 
+		float alpha = 1.f;
+
 	private:
 
 		std::unordered_map<std::string, Animation2D*> m_animationList;

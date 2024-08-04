@@ -80,7 +80,8 @@ namespace Engine
 			renderOffset.x + data.offset.x + size.x,
 			renderOffset.y + data.offset.y + size.y);
 
-		D2DRenderSystem::DrawBitmap(m_activeAnimation->GetSprite(data.index), dstRect, Color4(), renderTarget);
+		D2DRenderSystem::DrawBitmap(m_activeAnimation->GetSprite(data.index),
+			dstRect, alpha, renderTarget);
 
 		//if (Debug::IsActive())
 		//{
