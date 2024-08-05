@@ -15,8 +15,9 @@ namespace Engine
 		m_window = new WindowSystem(_hinstance, _title, Vector2(_width, _height));
 		m_window->Initialize();
 		D2DRenderSystem::Initialize(m_window);
-		Input::Initialize(m_window);
 		FMODSystem::Initialize();
+
+		Input::Initialize(m_window);
 		Time::Initialize();
 	}
 

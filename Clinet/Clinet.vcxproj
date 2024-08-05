@@ -136,14 +136,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Script\Effect\EffectBase.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Script\Object\ObjectBase.cpp" />
     <ClCompile Include="Script\TestScript.cpp" />
+    <ClCompile Include="Script\UI\UIBase.cpp" />
+    <ClCompile Include="World\Stage_03.cpp" />
+    <ClCompile Include="World\Stage_02.cpp" />
+    <ClCompile Include="World\Stage_01.cpp" />
     <ClCompile Include="World\Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Script\Effect\EffectBase.h" />
+    <ClInclude Include="Script\Object\ObjectBase.h" />
     <ClInclude Include="ScriptHeaders.h" />
     <ClInclude Include="Script\TestScript.h" />
+    <ClInclude Include="Script\UI\UIBase.h" />
+    <ClInclude Include="World\Stage_03.h" />
+    <ClInclude Include="World\Stage_02.h" />
+    <ClInclude Include="World\Stage_01.h" />
     <ClInclude Include="World\Test.h" />
   </ItemGroup>
   <ItemGroup>

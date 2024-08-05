@@ -94,26 +94,13 @@ namespace Engine
 			break;
 
 		case WM_SIZE:
-			if (pThis)
-			{
-				int width = LOWORD(_lParam);
-				int height = HIWORD(_lParam);
-				pThis->m_windowSize = Vector2(width, height);
-			}
 			break;
 
 		case WM_MOVE:
-			if (pThis)
-			{
-				int x = (int)(short)LOWORD(_lParam);
-				int y = (int)(short)HIWORD(_lParam);
-				pThis->m_windowPosition = Vector2(x, y);
-			}
 			break;
 
 		case WM_MOUSEMOVE:
 			Input::GetMouseMove();
-			Debug::Log(std::to_string(Input::MousePosition().x) + ", " + std::to_string(Input::MousePosition().y));
 			break;
 
 		case WM_KEYDOWN:
