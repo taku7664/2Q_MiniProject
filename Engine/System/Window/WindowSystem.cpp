@@ -49,7 +49,7 @@ namespace Engine
 			NULL, NULL, m_hInstance, NULL);
 
 		if (!m_handle) {
-			MessageBox(nullptr, L"Window creation failed!", L"Error", MB_ICONERROR);
+			assert(false && "WindowHandle_nullptr");
 		}
 	}
 

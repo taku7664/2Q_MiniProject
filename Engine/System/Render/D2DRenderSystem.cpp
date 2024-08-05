@@ -46,8 +46,10 @@ namespace Engine
 			D2D1::RenderTargetProperties(),
 			D2D1::HwndRenderTargetProperties(_window->GetHandle(), size),
 			&m_renderTarget);
-		if (FAILED(check))
-			assert(false);
+		if (FAILED(check)) assert(false);
+
+		check = m_renderTarget->QueryInterface(&m_deviceContext);
+		if (FAILED(check)) assert(false);
 
 		check = m_writeFactory->CreateTextFormat(
 			L"맑은 고딕",                        // 폰트 이름
@@ -58,13 +60,11 @@ namespace Engine
 			20.0f,                              // 폰트 크기
 			L"ko-kr",                           // 로캘(글씨 지역이름 설정이라는데 모르겠네요)
 			&m_textFormat);
-		if (FAILED(check))
-			assert(false);
+		if (FAILED(check)) assert(false);
 
 		// 기본 브러쉬 생성
 		check = m_renderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Black), &m_brush);
-		if (FAILED(check))
-			assert(false);
+		if (FAILED(check)) assert(false);
 
 	}
 	void D2DRenderSystem::Release()
